@@ -372,7 +372,7 @@ int main()
 	output(replacing(list, 1, 2));
 	list = input(razm);
 
-	 printf("\nОбмен 2 и 1 элемента: ");
+	printf("\nОбмен 2 и 1 элемента: ");
 	output(replacing(list, 2, 1));
 	list = input(razm);
 
