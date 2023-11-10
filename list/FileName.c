@@ -103,16 +103,16 @@ List replacing(List list, int position1, int position2)
 	int count = 1;
 	if (position1<1 || position2<1 || position1>razm || position2>razm)
 	{
-		printf("\nВведены неверные позиции");
+		printf("\nР’РІРµРґРµРЅС‹ РЅРµРІРµСЂРЅС‹Рµ РїРѕР·РёС†РёРё");
 		return 0;
 	}
-	else 
+	else
 	{
 		if (position1 == position2)
 			return list;
 		else
 		{
-			if (position1 + 1 == position2 || position2 + 1 == position1) //проверка на соседние элементы
+			if (position1 + 1 == position2 || position2 + 1 == position1) //РїСЂРѕРІРµСЂРєР° РЅР° СЃРѕСЃРµРґРЅРёРµ СЌР»РµРјРµРЅС‚С‹
 			{
 				if (position1 == 1 || position2 == 1)
 				{
@@ -145,7 +145,7 @@ List replacing(List list, int position1, int position2)
 				{
 					if (position1 < position2)
 					{
-						while (count != position1 - 1) //поиск элементов, предшествующих обмениваемым
+						while (count != position1 - 1) //РїРѕРёСЃРє СЌР»РµРјРµРЅС‚РѕРІ, РїСЂРµРґС€РµСЃС‚РІСѓСЋС‰РёС… РѕР±РјРµРЅРёРІР°РµРјС‹Рј
 						{
 							prev1 = prev1->next;
 							count++;
@@ -162,7 +162,7 @@ List replacing(List list, int position1, int position2)
 					}
 					else
 					{
-						while (count != position2 - 1) //поиск элементов, предшествующих обмениваемым
+						while (count != position2 - 1) //РїРѕРёСЃРє СЌР»РµРјРµРЅС‚РѕРІ, РїСЂРµРґС€РµСЃС‚РІСѓСЋС‰РёС… РѕР±РјРµРЅРёРІР°РµРјС‹Рј
 						{
 							prev1 = prev1->next;
 							count++;
@@ -201,14 +201,14 @@ List replacing(List list, int position1, int position2)
 				}
 				else
 				{
-					while (count != position1 - 1) //поиск элемента, предшествующего обмениваемому первому
+					while (count != position1 - 1) //РїРѕРёСЃРє СЌР»РµРјРµРЅС‚Р°, РїСЂРµРґС€РµСЃС‚РІСѓСЋС‰РµРіРѕ РѕР±РјРµРЅРёРІР°РµРјРѕРјСѓ РїРµСЂРІРѕРјСѓ
 					{
 						prev1 = prev1->next;
 						count++;
 					}
 					count = 1;
-					elem1 = prev1->next; //определение обмениваемого 1 элемента
-					next1 = elem1->next; //элемент после 1 элемента
+					elem1 = prev1->next; //РѕРїСЂРµРґРµР»РµРЅРёРµ РѕР±РјРµРЅРёРІР°РµРјРѕРіРѕ 1 СЌР»РµРјРµРЅС‚Р°
+					next1 = elem1->next; //СЌР»РµРјРµРЅС‚ РїРѕСЃР»Рµ 1 СЌР»РµРјРµРЅС‚Р°
 				}
 
 				if (position2 == 1)
@@ -240,7 +240,7 @@ List replacing(List list, int position1, int position2)
 				}
 
 				if (prev1 != list)
-					prev1->next = elem2; //обмен указателей (после предшевтвующего 1 элемента идет обмениваемый 2 элемент, а после него последующий от 1 элемента, и наоборот)
+					prev1->next = elem2; //РѕР±РјРµРЅ СѓРєР°Р·Р°С‚РµР»РµР№ (РїРѕСЃР»Рµ РїСЂРµРґС€РµРІС‚РІСѓСЋС‰РµРіРѕ 1 СЌР»РµРјРµРЅС‚Р° РёРґРµС‚ РѕР±РјРµРЅРёРІР°РµРјС‹Р№ 2 СЌР»РµРјРµРЅС‚, Р° РїРѕСЃР»Рµ РЅРµРіРѕ РїРѕСЃР»РµРґСѓСЋС‰РёР№ РѕС‚ 1 СЌР»РµРјРµРЅС‚Р°, Рё РЅР°РѕР±РѕСЂРѕС‚)
 				else prev1 = elem2;
 				if (prev2 != NULL)
 					prev2->next = elem1;
@@ -289,106 +289,106 @@ void output(List list)
 
 int main()
 {
-	system("chcp 1251 > null");
+	system("chcp 1251 > nul");
 	List list = input(razm);
-	printf("Лист из %d элементов: ", razm);
-	output(list);//вывод работает
+	printf("Р›РёСЃС‚ РёР· %d СЌР»РµРјРµРЅС‚РѕРІ: ", razm);
+	output(list);//РІС‹РІРѕРґ СЂР°Р±РѕС‚Р°РµС‚
 	list = input(razm);
 	printf("---------------------------------");
 
-	printf("\nУдаление 1 элемента: ");
+	printf("\nРЈРґР°Р»РµРЅРёРµ 1 СЌР»РµРјРµРЅС‚Р°: ");
 	output(deleteOne(list, 1, razm));
 	list = input(razm);
 
-	printf("\nУдаление последнего элемента: ");
+	printf("\nРЈРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р°: ");
 	output(deleteOne(list, razm, razm));
 	list = input(razm);
 
-	printf("\nУдаление 4 элемента: ");
+	printf("\nРЈРґР°Р»РµРЅРёРµ 4 СЌР»РµРјРµРЅС‚Р°: ");
 	output(deleteOne(list, 4, razm));
 	list = input(razm);
 	printf("---------------------------------");
 
-	printf("\nУдаление всего листа: ");
+	printf("\nРЈРґР°Р»РµРЅРёРµ РІСЃРµРіРѕ Р»РёСЃС‚Р°: ");
 	output(deleteAll(list));
 	list = input(razm);
 	printf("---------------------------------");
 
-	printf("\nДобавление 1 элемента: ");
-	output(addOne(list, 0, 50));// 1 число позиция, т.е. от 0 до 9
+	printf("\nР”РѕР±Р°РІР»РµРЅРёРµ 1 СЌР»РµРјРµРЅС‚Р°: ");
+	output(addOne(list, 0, 50));// 1 С‡РёСЃР»Рѕ РїРѕР·РёС†РёСЏ, С‚.Рµ. РѕС‚ 0 РґРѕ 9
 	list = input(razm);
 
-	printf("\nДобавление 10 элемента: ");
-	output(addOne(list, 9, 50));// 1 число позиция, т.е. от 0 до 9
+	printf("\nР”РѕР±Р°РІР»РµРЅРёРµ 10 СЌР»РµРјРµРЅС‚Р°: ");
+	output(addOne(list, 9, 50));// 1 С‡РёСЃР»Рѕ РїРѕР·РёС†РёСЏ, С‚.Рµ. РѕС‚ 0 РґРѕ 9
 	list = input(razm);
 
 
-	printf("\nДобавление 3 элемента: ");
-	output(addOne(list, 2, 50));// 1 число позиция, т.е. от 0 до 9
+	printf("\nР”РѕР±Р°РІР»РµРЅРёРµ 3 СЌР»РµРјРµРЅС‚Р°: ");
+	output(addOne(list, 2, 50));// 1 С‡РёСЃР»Рѕ РїРѕР·РёС†РёСЏ, С‚.Рµ. РѕС‚ 0 РґРѕ 9
 	list = input(razm);
 	printf("---------------------------------");
 
-	printf("\nОбмен 4 и 7 элемента: ");
+	printf("\nРћР±РјРµРЅ 4 Рё 7 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 4, 7));
 	list = input(razm);
 
-	printf("\nОбмен 7 и 4 элемента: ");
+	printf("\nРћР±РјРµРЅ 7 Рё 4 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 7, 4));
 	list = input(razm);
 
-	printf("\nОбмен 1 и 5 элемента: ");
+	printf("\nРћР±РјРµРЅ 1 Рё 5 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 1, 5));
 	list = input(razm);
 
-	printf("\nОбмен 5 и 1 элемента: ");
+	printf("\nРћР±РјРµРЅ 5 Рё 1 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 5, 1));
 	list = input(razm);
 
-	printf("\nОбмен 6 и 10 элемента: ");
+	printf("\nРћР±РјРµРЅ 6 Рё 10 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 6, 10));
 	list = input(razm);
 
-	 printf("\nОбмен 10 и 6 элемента: ");
+	printf("\nРћР±РјРµРЅ 10 Рё 6 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 10, 6));
 	list = input(razm);
 
-	 printf("\nОбмен 1 и 10 элемента: ");
+	printf("\nРћР±РјРµРЅ 1 Рё 10 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 1, 10));
 	list = input(razm);
 
-	 printf("\nОбмен 10 и 1 элемента: ");
+	printf("\nРћР±РјРµРЅ 10 Рё 1 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 10, 1));
 	list = input(razm);
 
-	 printf("\nОбмен 3 и 4 элемента: ");
+	printf("\nРћР±РјРµРЅ 3 Рё 4 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 3, 4));
 	list = input(razm);
 
-	 printf("\nОбмен 4 и 3 элемента: ");
+	printf("\nРћР±РјРµРЅ 4 Рё 3 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 4, 3));
 	list = input(razm);
 
-	 printf("\nОбмен 1 и 2 элемента: ");
+	printf("\nРћР±РјРµРЅ 1 Рё 2 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 1, 2));
 	list = input(razm);
 
-	printf("\nОбмен 2 и 1 элемента: ");
+	printf("\nРћР±РјРµРЅ 2 Рё 1 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 2, 1));
 	list = input(razm);
 
-	 printf("\nОбмен 10 и 9 элемента: ");
+	printf("\nРћР±РјРµРЅ 10 Рё 9 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 10, 9));
 	list = input(razm);
 
-	 printf("\nОбмен 9 и 10 элемента: ");
+	printf("\nРћР±РјРµРЅ 9 Рё 10 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 9, 10));
 	list = input(razm);
 
-	printf("\nОбмен 1 и 1 элемента: ");
+	printf("\nРћР±РјРµРЅ 1 Рё 1 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 1, 1));
 	list = input(razm);
 
-	printf("\nОбмен 0 и 11 элемента: ");
+	printf("\nРћР±РјРµРЅ 0 Рё 11 СЌР»РµРјРµРЅС‚Р°: ");
 	output(replacing(list, 0, 11));
 	list = input(razm);
 
